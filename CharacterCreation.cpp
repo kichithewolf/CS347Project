@@ -13,7 +13,7 @@ void CharacterCreation::RollAll() {
      srand(time(NULL));
      for(int i = 0; i < numberOfStats; i++) {
              stats[i] = rand() % 100 + 1;
-             cout << "Rolled: " << stats[i] << ".\n";
+             //cout << "Rolled: " << stats[i] << ".\n";
      }
 }
 
