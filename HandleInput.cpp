@@ -3,7 +3,7 @@
 /*
 This prompts the user for input.
 */
-void HandleInput::GetInput() {
+void HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
      string input;
      cout << "> ";
      cin >> input;
@@ -11,15 +11,19 @@ void HandleInput::GetInput() {
      //cout << "Input recieved: " << input << ".\n";
      //cout << "Passing...\n";
      
-     DecideAction(input);
+     DecideAction(input, character, savegame, choices);
 }
 
 /*
 Takes the given input and deals with it.
 */
-void HandleInput::DecideAction(string input) {
+void HandleInput::DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
      if(input.compare("up") == 0) {
         cout << "User entered up.\n";
+     } else if(input.compare("save") == 0) {
+            cout << "Saving...\n";
+            savegame.SaveGame(character);
+            cout << "Done.\n";
      }
 }
 

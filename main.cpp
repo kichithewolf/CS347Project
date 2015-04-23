@@ -33,15 +33,16 @@ int main() {
     testGame.ShowAllStats();
     */
     
+    cout << "Enter input.\n";
+    inputs.GetInput(testGame, gameData, choices);
+    
+    /*
     cout << "Saving game.\n";
     gameData.SaveGame(testGame);
     cout << "Game saved.\n";
-    
-    
-    /*
-    cout << "Enter input.\n";
-    inputs.GetInput();
     */
+    
+
 
     //cin.get();
     return 0;

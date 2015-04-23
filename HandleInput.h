@@ -4,14 +4,16 @@
 #include <iostream>
 #include <string>
 #include "CharacterCreation.h"
+#include "SaveLoad.h"
+#include "MakeChoices.h"
 
 using namespace std;
 
 class HandleInput {
 
       public:
-             void GetInput();
-             void DecideAction(string input);
+             void GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices);
+             void DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices);
              string GetName();
 };
 #endif
