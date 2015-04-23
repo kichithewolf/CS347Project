@@ -25,7 +25,13 @@ int CharacterCreation::SetStat(int statIndex, int value) {
 Increments a stat by value.
 */
 int CharacterCreation::IncrementStat(int statIndex, int value) {
-    stats[statIndex] += value;
+    if(value < 0) {
+       cout << "Error: Negative Value. Please use DecrementStat().\n";
+    } else if(stats[statIndex] + value > 100) {
+       stats[statsIndex] = 100;
+    } else {
+      stats[statIndex] += value;
+    }
     return stats[statIndex];
 }
 
@@ -33,7 +39,13 @@ int CharacterCreation::IncrementStat(int statIndex, int value) {
 Decrements a stat by value.
 */
 int CharacterCreation::DecrementStat(int statIndex, int value) {
-    stats[statIndex] -= value;
+    if(value < 0) {
+       cout << "Error: Negative Value. Please use IncrementStat().\n";
+    else if(stats[statIndex] - value < -100) {
+         stats[statsIndex] = -100;
+    } else {
+         stats[statIndex] -= value;
+    }
     return stats[statIndex];
 }
 
