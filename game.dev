@@ -1,7 +1,7 @@
 [Project]
 FileName=game.dev
 Name=Project1
-UnitCount=5
+UnitCount=6
 Type=1
 Ver=1
 ObjFiles=
@@ -89,6 +89,16 @@ BuildCmd=
 
 [Unit5]
 FileName=SaveLoad.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=MakeChoices.h
 CompileCpp=1
 Folder=
 Compile=1

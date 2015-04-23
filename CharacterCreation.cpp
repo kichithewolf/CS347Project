@@ -1,9 +1,4 @@
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
 #include "CharacterCreation.h"
-
-using namespace std;
 
 /*
 Rolls values for each stat.
@@ -57,4 +52,12 @@ void CharacterCreation::ShowAllStats() {
      for(int i = 0; i < numberOfStats; i++) {
              cout << "Stat " << i << ": " << stats[i] << ".\n";
      }
+}
+
+/*
+Lets player set the name of their character.
+Note: MakeChoices will handle the input of the name.
+*/
+void CharacterCreation::SetName(string name) {
+     characterName = name;
 }

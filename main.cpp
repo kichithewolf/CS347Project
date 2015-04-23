@@ -1,6 +1,7 @@
 #include <iostream>
 #include "CharacterCreation.h"
 #include "SaveLoad.h"
+#include "MakeChoices.h"
 
 using namespace std;
 

@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
 #include "SaveLoad.h"
-
-using namespace std;
 
 /*
 Writes all relevant game data to a text file.
