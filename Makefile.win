@@ -5,8 +5,8 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = 
-OBJ  = CharacterCreation.o main.o SaveLoad.o $(RES)
-LINKOBJ  = CharacterCreation.o main.o SaveLoad.o $(RES)
+OBJ  = CharacterCreation.o main.o SaveLoad.o MakeChoices.o HandleInput.o $(RES)
+LINKOBJ  = CharacterCreation.o main.o SaveLoad.o MakeChoices.o HandleInput.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib"  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
@@ -34,3 +34,9 @@ main.o: main.cpp
 
 SaveLoad.o: SaveLoad.cpp
 	$(CPP) -c SaveLoad.cpp -o SaveLoad.o $(CXXFLAGS)
+
+MakeChoices.o: MakeChoices.cpp
+	$(CPP) -c MakeChoices.cpp -o MakeChoices.o $(CXXFLAGS)
+
+HandleInput.o: HandleInput.cpp
+	$(CPP) -c HandleInput.cpp -o HandleInput.o $(CXXFLAGS)

@@ -12,6 +12,7 @@ void SaveLoad::SaveGame(CharacterCreation character) {
          }
          //Other information is seperated by newlines.
          save << "\n";
+         save << character.characterName << "\n";
          
          save.close();
 }

@@ -56,8 +56,9 @@ void CharacterCreation::ShowAllStats() {
 
 /*
 Lets player set the name of their character.
-Note: MakeChoices will handle the input of the name.
+Note: MakeChoices or HandleInput will handle the input of the name.
 */
 void CharacterCreation::SetName(string name) {
+     //cout << name << "\n";
      characterName = name;
 }
