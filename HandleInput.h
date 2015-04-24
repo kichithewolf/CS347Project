@@ -12,8 +12,8 @@ using namespace std;
 class HandleInput {
 
       public:
-             void GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices);
-             void DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices);
+             int GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices);
+             int DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices);
              string GetName();
 };
 #endif

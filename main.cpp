@@ -1,8 +1,8 @@
 #include <iostream>
 #include "CharacterCreation.h"
 #include "SaveLoad.h"
-#include "MakeChoices.h"
 #include "HandleInput.h"
+#include "MakeChoices.h"
 
 /* This is for testing */
 #include <limits.h>
@@ -12,8 +12,8 @@ using namespace std;
 int main() {
     CharacterCreation testGame;
     SaveLoad gameData;
-    MakeChoices choices;
     HandleInput inputs;
+    MakeChoices choices;
     
     CharacterCreation loadGameTest;
     
@@ -111,6 +111,8 @@ int main() {
     cout << "up down left right save load exit stats\n";
     
     inputs.GetInput(testGame, gameData, choices);
+    
+    //choices.Scene(testGame, gameData, choices, inputs, choices);
     
     /* a fake story for testing make choices */
     

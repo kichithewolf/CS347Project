@@ -3,7 +3,7 @@
 /*
 This prompts the user for input.
 */
-void HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
+int HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
      string input;
      cout << "> ";
      cin >> input;
@@ -11,21 +11,29 @@ void HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeC
      //cout << "Input recieved: " << input << ".\n";
      //cout << "Passing...\n";
      
-     DecideAction(input, character, savegame, choices);
+     return DecideAction(input, character, savegame, choices);
 }
 
 /*
 Takes the given input and deals with it.
+0: save/load/stats/exit
+1, 2, 3, 4: up, down, left, right
+-1: invalid input
 */
-void HandleInput::DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
+int HandleInput::DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
+    int retvalue = 0;
      if(input.compare("up") == 0) {
-            cout << "User entered up.\n";
+            //cout << "User entered up.\n";
+            retvalue = 1;
      } else if(input.compare("down") == 0) {
-            cout << "user entered down.\n";
+            //cout << "user entered down.\n";
+            retvalue = 2;
      } else if(input.compare("left") == 0) {
-            cout << "user entered left\n";
+            //cout << "user entered left\n";
+            retvalue = 3;
      } else if(input.compare("right") == 0) {
-            cout << "user entered right\n";
+            //cout << "user entered right\n";
+            retvalue = 4;
      } else if(input.compare("save") == 0) {
             cout << "Saving...\n";
             savegame.SaveGame(character);
@@ -34,7 +42,7 @@ void HandleInput::DecideAction(string input, CharacterCreation character, SaveLo
      } else if(input.compare("load") == 0) {
             cout << "Loading...\n";
             character = savegame.LoadGame(character);
-            cout << "Done. This was loaded.\n";
+            cout << "Done. The following was loaded.\n";
             character.ShowAllStats();
      } else if(input.compare("stats") == 0) {
             character.ShowAllStats();
@@ -43,7 +51,9 @@ void HandleInput::DecideAction(string input, CharacterCreation character, SaveLo
             exit(0);
      } else {
             cout << "Input not valid!\n";
+            retvalue = -1;
      }
+     return retvalue;
 }
 
 /*
