@@ -32,6 +32,9 @@ int main() {
     cout << "\nSet stat[0] to 100, then try to increment. Should be 100.\n";
     testGame.SetStat(0, 100);
     testGame.IncrementStat(0, 1);
+    cout << "Set stat[0] to a character, Error Message. Should be 0.\n";
+    testGame.SetStat(0,0);
+    testGame.IncrementStat(0,a);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
     cout << "Set stat[0] to 100, then try to increment max neg. Should error, be 100.\n";
     testGame.SetStat(0, 100);
@@ -45,6 +48,9 @@ int main() {
     cout << "Set stat[0] to 0, then try to decrement. Should be 0.\n";
     testGame.SetStat(0, 0);
     testGame.DecrementStat(0, 1);
+    cout << "Set stat[0] to a character, Error Message. Should be 0.\n";
+    testGame.SetStat(0,0);
+    testGame.DecrementStat(0,a);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
     cout << "Set stat[0] to 0, then try to decrement max neg. Should be error, be 0.\n";
     testGame.SetStat(0, 0);
