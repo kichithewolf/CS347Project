@@ -21,7 +21,7 @@ int main() {
     Unit Tests
     */
     
-    /* init stats */
+    /* init stats (not yet working)*/
     cout << "Show all uninitialized.\n";
     testGame.ShowAllStats();
     cout << "\nRoll numbers random.\n";
@@ -112,37 +112,9 @@ int main() {
     
     inputs.GetInput(testGame, gameData, choices);
     
-    //choices.Scene(testGame, gameData, choices, inputs, choices);
-    
-    /* a fake story for testing make choices */
-    
-    /*
-    cout << "Welcome to game demo.\nSince savegames have yet to be implemented, it's time to roll stats.\n";
-    cout << "Rolling stats...\n";
-    
-    testGame.RollAll();
-    
-    cout << "Finished rolling stats. Showing.\n";
-    
-    testGame.ShowAllStats();
-    
-    cout << "What about a character name?\n";
-    testGame.SetName(inputs.GetName());
-    //TODO name not working. Probably something dumb I overlooked.
-    cout << "So your name is " << testGame.characterName << "?\n";
-    cout << "Sounds good.\n";
-    
-    cout << "Loading game from save.\n";
-    testGame = gameData.LoadGame(testGame);
-    testGame.ShowAllStats();
-    
-    cout << "Enter input.\n";
-    inputs.GetInput(testGame, gameData, choices);
-    
-    cout << "Saving game.\n";
-    gameData.SaveGame(testGame);
-    cout << "Game saved.\n";
-    */
-    system("pause");
+    choices.Scene();
+
+
+    system("pause"); //windows only
     return 0;
 }

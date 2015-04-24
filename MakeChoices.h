@@ -11,6 +11,6 @@ class MakeChoices {
              /*
              After this are all custom scenes depending on game.
              */
-             int Scene(int previousID); //Takes prev in case relies?
+             int Scene(); //Takes prev in case relies?
 };
 #endif
