@@ -3,8 +3,9 @@ Repo for class project.
 
 Project done in Dev-C++ for now.
 
-On Windows just run the .exe to run the tests and play the "game".
+Windows: Just run the .exe to run the tests and play the "game".
+(Alternatively, open game.dev in Dev C++.)
 
-Linux support comming soon? (Need to write a makefile and stuff.)
+Linux: cd to folder, type make. Run using ./game. Or run the one already there.
 
 Mac: you're out of luck.
