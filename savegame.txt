@@ -1,2 +1,2 @@
-90 96 47 42 67 
-testman
+0 0 0 0 0 
+save game name test

@@ -17,7 +17,9 @@ Sets a value to a stat, given the index and the value.
 Returns the set value. Used to manually set a specific value.
 */
 int CharacterCreation::SetStat(int statIndex, int value) {
-    stats[statIndex] = value;
+    if(value > -1 && value < 101) {
+       stats[statIndex] = value;
+    }
     return stats[statIndex];
 }
 
@@ -28,7 +30,7 @@ int CharacterCreation::IncrementStat(int statIndex, int value) {
     if(value < 0) {
        cout << "Error: Negative Value. Please use DecrementStat().\n";
     } else if(stats[statIndex] + value > 100) {
-       stats[statsIndex] = 100;
+       stats[statIndex] = 100;
     } else {
       stats[statIndex] += value;
     }
@@ -41,8 +43,8 @@ Decrements a stat by value.
 int CharacterCreation::DecrementStat(int statIndex, int value) {
     if(value < 0) {
        cout << "Error: Negative Value. Please use IncrementStat().\n";
-    else if(stats[statIndex] - value < -100) {
-         stats[statsIndex] = -100;
+    } else if(stats[statIndex] - value < 0) {
+         stats[statIndex] = 0;
     } else {
          stats[statIndex] -= value;
     }

@@ -27,7 +27,7 @@ CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
      if(save) {
          for(int i = 0; i < 5; i++) {
                  save >> x;
-                 //cout << x;
+                 cout << x;
                  character.stats[i] = x;
          }
          save.close();
