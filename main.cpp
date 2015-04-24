@@ -69,7 +69,7 @@ int main() {
     
     /* etc. setting stats */
     cout << "Try to set stat[0] to something out of range. Should be whatever was last.\n";
-    testGame.SetStat(0, INT_MAX+1);
+    testGame.SetStat(0, INT_MAX);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
     
     /* name */
@@ -115,6 +115,6 @@ int main() {
     choices.Scene();
 
 
-    system("pause"); //windows only
+    //system("pause"); //windows only
     return 0;
 }
