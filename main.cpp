@@ -69,6 +69,9 @@ int main() {
     /* Finished Character Creation tests */
     /* Testing save load */
     
+    cout << "\nTrying to load a game, it does not exist (if this is the first run)\n";
+    gameData.LoadGame(loadGameTest);
+    
     //Save game
     cout << "\nTesting save game, setting all stats to 0 for test.\n";
     testGame.SetStat(0, 0);
@@ -82,7 +85,7 @@ int main() {
     
     //load game
     cout << "\nTesting load game.\n";
-    gameData.LoadGame(loadGameTest);
+    loadGameTest = gameData.LoadGame(loadGameTest);
     loadGameTest.ShowAllStats();
     cout << "name: " << loadGameTest.characterName << "\n";
     

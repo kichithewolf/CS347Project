@@ -22,14 +22,17 @@ Reads all relevant game data from a text file.
 */
 CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
      int x;
+     string n;
      ifstream save("savegame.txt");
      //TODO: Check for correct savegame (number of stats, etc.)
      if(save) {
          for(int i = 0; i < 5; i++) {
                  save >> x;
-                 cout << x;
+                 //cout << x;
                  character.stats[i] = x;
          }
+         save >> n;
+         character.characterName = n;
          save.close();
      } else {
             cout << "Save not found/loadable!\n";
