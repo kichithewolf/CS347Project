@@ -89,6 +89,19 @@ int main() {
     loadGameTest.ShowAllStats();
     cout << "name: " << loadGameTest.characterName << "\n";
     
+    /* done testing save/load */
+    /* now testing handle input */
+    
+    testGame.SetName(inputs.GetName());
+    cout << "Entered name is " << testGame.characterName << ".\n";
+    
+    cout << "Testing handle input. valid inputs:\n";
+    cout << "up down left right save load exit stats\n";
+    
+    inputs.GetInput(testGame, gameData, choices);
+    
+    /* a fake story for testing make choices */
+    
     /*
     cout << "Welcome to game demo.\nSince savegames have yet to be implemented, it's time to roll stats.\n";
     cout << "Rolling stats...\n";

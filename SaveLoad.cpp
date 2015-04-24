@@ -24,13 +24,15 @@ CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
      int x;
      string n;
      ifstream save("savegame.txt");
-     //TODO: Check for correct savegame (number of stats, etc.)
+     //TODO: (Optional) Check for correct savegame (number of stats, etc.)
+     // Otherwise it's the user's fault for messing with the save.
      if(save) {
          for(int i = 0; i < 5; i++) {
                  save >> x;
                  //cout << x;
                  character.stats[i] = x;
          }
+         //TODO
          save >> n;
          character.characterName = n;
          save.close();

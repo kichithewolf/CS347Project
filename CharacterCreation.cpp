@@ -66,6 +66,7 @@ void CharacterCreation::ShowAllStats() {
      for(int i = 0; i < numberOfStats; i++) {
              cout << "Stat " << i << ": " << stats[i] << ".\n";
      }
+     cout << "Name: " << characterName << "\n";
 }
 
 /*
