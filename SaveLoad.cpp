@@ -4,7 +4,7 @@
 Writes all relevant game data to a text file.
 */
 void SaveLoad::SaveGame(CharacterCreation character) {
-         ofstream save("savegame.txt");
+         ofstream save("savegame.sav");
          
          //Individual stats are seperated by a " ".
          for(int i = 0; i < 5; i++) {
@@ -24,9 +24,7 @@ CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
      int x;
      string n;
      string t;
-     ifstream save("savegame.txt");
-     //TODO: (Optional) Check for correct savegame (number of stats, etc.)
-     // Otherwise it's the user's fault for messing with the save.
+     ifstream save("savegame.sav");
      if(save) {
          for(int i = 0; i < 5; i++) {
                  save >> x;
