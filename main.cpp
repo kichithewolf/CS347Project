@@ -85,7 +85,7 @@ int main() {
     gameData.LoadGame(loadGameTest);
     
     //Save game
-    cout << "\nTesting save game, setting all stats to 0 for test.\n";
+    cout << "\nTesting save game, setting all stats to 0 for test. Name is save game name test.\n";
     testGame.SetStat(0, 0);
     testGame.SetStat(1, 0);
     testGame.SetStat(2, 0);
@@ -115,6 +115,6 @@ int main() {
     choices.Scene();
 
 
-    //system("pause"); //windows only
+    system("pause"); //windows only
     return 0;
 }

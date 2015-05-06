@@ -12,7 +12,7 @@ void SaveLoad::SaveGame(CharacterCreation character) {
          }
          //Other information is seperated by newlines.
          save << "\n";
-         save << character.characterName << "\n";
+         save << character.characterName;
          
          save.close();
 }
@@ -23,6 +23,7 @@ Reads all relevant game data from a text file.
 CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
      int x;
      string n;
+     string t;
      ifstream save("savegame.txt");
      //TODO: (Optional) Check for correct savegame (number of stats, etc.)
      // Otherwise it's the user's fault for messing with the save.
@@ -32,9 +33,11 @@ CharacterCreation SaveLoad::LoadGame(CharacterCreation character) {
                  //cout << x;
                  character.stats[i] = x;
          }
-         //TODO
-         save >> n;
-         character.characterName = n;
+         while(!save.eof()) {
+            save >> n;
+            t += n + " ";
+         }
+         character.characterName = t;
          save.close();
      } else {
             cout << "Save not found/loadable!\n";
