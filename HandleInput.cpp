@@ -3,7 +3,7 @@
 /*
 This prompts the user for input.
 */
-int HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
+int HandleInput::GetInput(CharacterCreation character, SaveLoad savegame) {
      string input;
      cout << "> ";
      cin >> input;
@@ -11,16 +11,15 @@ int HandleInput::GetInput(CharacterCreation character, SaveLoad savegame, MakeCh
      //cout << "Input recieved: " << input << ".\n";
      //cout << "Passing...\n";
      
-     return DecideAction(input, character, savegame, choices);
+     return DecideAction(input, character, savegame);
 }
 
 /*
 Takes the given input and deals with it.
-0: save/load/stats/exit
+-1: save/load/stats/exit/invalid input
 1, 2, 3, 4: up, down, left, right
--1: invalid input
 */
-int HandleInput::DecideAction(string input, CharacterCreation character, SaveLoad savegame, MakeChoices choices) {
+int HandleInput::DecideAction(string input, CharacterCreation character, SaveLoad savegame) {
     int retvalue = 0;
      if(input.compare("up") == 0) {
             //cout << "User entered up.\n";
@@ -39,6 +38,7 @@ int HandleInput::DecideAction(string input, CharacterCreation character, SaveLoa
             savegame.SaveGame(character);
             cout << "Done. This was saved:\n";
             character.ShowAllStats();
+            retvalue = -1;
      } else if(input.compare("load") == 0) {
             cout << "Loading...\n";
             character = savegame.LoadGame(character);
@@ -46,6 +46,7 @@ int HandleInput::DecideAction(string input, CharacterCreation character, SaveLoa
             character.ShowAllStats();
      } else if(input.compare("stats") == 0) {
             character.ShowAllStats();
+            retvalue = -1;
      } else if(input.compare("exit") == 0) {
             cout << "Exiting. Goodbye.\n";
             exit(0);
@@ -62,8 +63,6 @@ Prompts for character name. Used at start of game.
 string HandleInput::GetName() {
      string name;
      cout << "Please enter your character name: ";
-     //TODO: get whole line of name
-     cin >> name;
-     //cout << name << "\n";
+     getline(cin, name);
      return name;
 }

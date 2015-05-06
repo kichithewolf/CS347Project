@@ -22,22 +22,27 @@ int main() {
     */
     
     /* init stats (not yet working)*/
+    /*
     cout << "Show all uninitialized.\n";
     testGame.ShowAllStats();
     cout << "\nRoll numbers random.\n";
     testGame.RollAll();
     testGame.ShowAllStats();
+    */
     
     /* Increment stat */
+    /*
     cout << "\nSet stat[0] to 100, then try to increment. Should be 100.\n";
     testGame.SetStat(0, 100);
     testGame.IncrementStat(0, 1);
+    */
     /*
     Testing for character input
     cout << "Set stat[0] to a character, Error Message. Should be 0.\n";
     testGame.SetStat(0,0);
     testGame.IncrementStat(0,a);
     */
+    /*
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
     cout << "Set stat[0] to 100, then try to increment max neg. Should error, be 100.\n";
     testGame.SetStat(0, 100);
@@ -46,17 +51,21 @@ int main() {
     cout << "Set stat[0] to 50, then try to increment max pos. Should be 100.\n";
     testGame.SetStat(50, INT_MAX);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
+    */
 
     /* Decrement stat */
+    /*
     cout << "Set stat[0] to 0, then try to decrement. Should be 0.\n";
     testGame.SetStat(0, 0);
     testGame.DecrementStat(0, 1);
+    */
     /*
     Try testing for character inputs
     cout << "Set stat[0] to a character, Error Message. Should be 0.\n";
     testGame.SetStat(0,0);
     testGame.DecrementStat(0,a);
     */
+    /*
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
     cout << "Set stat[0] to 0, then try to decrement max neg. Should be error, be 0.\n";
     testGame.SetStat(0, 0);
@@ -66,25 +75,31 @@ int main() {
     testGame.SetStat(0, 0);
     testGame.DecrementStat(0, 1);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
+    */
     
     /* etc. setting stats */
+    /*
     cout << "Try to set stat[0] to something out of range. Should be whatever was last.\n";
     testGame.SetStat(0, INT_MAX);
     cout << "Stat is now: " << testGame.GetStat(0) << "\n";
+    */
     
     /* name */
+    /*
     cout << "Not initialized name, should be blank (>><<): >>" << testGame.characterName << "<<\n";
     cout << "Set name to \"test name\": ";
     testGame.SetName("test name");
     cout << testGame.characterName << "\n";
+    */
     
     /* Finished Character Creation tests */
     /* Testing save load */
-    
+    /*
     cout << "\nTrying to load a game, it does not exist (if this is the first run)\n";
     gameData.LoadGame(loadGameTest);
-    
+    */
     //Save game
+    /*
     cout << "\nTesting save game, setting all stats to 0 for test. Name is save game name test.\n";
     testGame.SetStat(0, 0);
     testGame.SetStat(1, 0);
@@ -94,16 +109,20 @@ int main() {
     testGame.SetName("save game name test");
     gameData.SaveGame(testGame);
     cout << "Game saved.";
+    */
     
     //load game
+    /*
     cout << "\nTesting load game.\n";
     loadGameTest = gameData.LoadGame(loadGameTest);
     loadGameTest.ShowAllStats();
     cout << "name: " << loadGameTest.characterName << "\n";
+    */
     
     /* done testing save/load */
     /* now testing handle input */
     
+    /*
     testGame.SetName(inputs.GetName());
     cout << "Entered name is " << testGame.characterName << ".\n";
     
@@ -113,7 +132,21 @@ int main() {
     inputs.GetInput(testGame, gameData, choices);
     
     choices.Scene();
-
+    */
+    
+    /*
+    "Game
+    */
+    
+    cout << "Demo.\n";
+    testGame.SetName(inputs.GetName());
+    
+    cout << "So your name is " << testGame.characterName << "? Alright, rolling stats...\n";
+    testGame.RollAll();
+    testGame.ShowAllStats();
+    cout << "These are the stats for your character. They will influence gameplay.\n";
+    cout << "Game commands: save, load, up, down, left, right, stats, exit.\n";
+    choices.TestScene1(testGame, gameData, inputs);
 
     system("pause"); //windows only
     return 0;
